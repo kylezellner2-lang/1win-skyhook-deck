@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>1win — Skyhook</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,7 +29,11 @@ tailwind.config = {
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  body { background: #0A0B0E; }
+  body { background: #0A0B0E; overflow-x: hidden; }
+  footer { padding-bottom: calc(3.5rem + env(safe-area-inset-bottom, 0px)); }
+  @media (max-width: 640px) {
+    footer { padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px)); }
+  }
   section[id] { scroll-margin-top: 72px; }
   ::selection { background: #1479FF; color: #fff; }
 
@@ -92,7 +96,7 @@ tailwind.config = {
 
 <!-- 2 · THE STUNT -->
 <section id="stunt" class="relative overflow-hidden py-14 md:py-20">
-  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none max-w-full overflow-hidden"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10] whitespace-nowrap" style="font-size:9vw">1win</span></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6">
     <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">01 — The Stunt</p>
     <h2 class="font-head font-extrabold text-4xl md:text-6xl tracking-tight max-w-3xl mt-3 reveal">Skyhook.</h2>
@@ -131,7 +135,7 @@ tailwind.config = {
 
 <!-- 3 · BRANDING -->
 <section id="branding" class="relative overflow-hidden py-14 md:py-20 border-y border-white/5 bg-panel/40">
-  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none max-w-full overflow-hidden"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10] whitespace-nowrap" style="font-size:9vw">1win</span></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6">
     <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">02 — Branding</p>
     <h2 class="font-head font-extrabold text-3xl md:text-5xl tracking-tight max-w-3xl mt-3 reveal">1win is on me, in every single frame.</h2>
@@ -155,7 +159,7 @@ tailwind.config = {
 
 <!-- 4 · DELIVERABLES -->
 <section id="deliverables" class="relative overflow-hidden py-14 md:py-20">
-  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none max-w-full overflow-hidden"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10] whitespace-nowrap" style="font-size:9vw">1win</span></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6">
     <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">03 — Deliverables</p>
 
@@ -231,7 +235,7 @@ tailwind.config = {
 
 <!-- 6 · THE CREATOR -->
 <section id="creators" class="relative overflow-hidden py-14 md:py-20">
-  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none max-w-full overflow-hidden"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10] whitespace-nowrap" style="font-size:9vw">1win</span></div>
   <div class="relative z-10 max-w-6xl mx-auto px-6">
     <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">05 — The Creator</p>
 
@@ -259,8 +263,8 @@ tailwind.config = {
 
 <!-- FOOTER -->
 <footer class="relative overflow-hidden py-14 md:py-20 border-t border-white/5 bg-panel/40 text-center">
-  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none">
-    <span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.04]" style="font-size:26vw">1win</span>
+  <div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-8 select-none flex justify-center overflow-hidden">
+    <span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.04] whitespace-nowrap" style="font-size:clamp(3rem,18vw,13rem)">1win</span>
   </div>
   <div class="relative max-w-3xl mx-auto px-6">
     <p class="font-head font-extrabold text-2xl md:text-3xl tracking-tight reveal">Kyle Zellner</p>

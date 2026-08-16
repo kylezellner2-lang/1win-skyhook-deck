@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1win — Skyhook</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        ink: '#0A0B0E',
+        panel: '#101218',
+        winblue: '#1479FF',
+        winblue2: '#4DA3FF',
+        mute: '#8A93A6',
+      },
+      fontFamily: {
+        head: ['Sora', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+      },
+    },
+  },
+};
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { background: #0A0B0E; }
+  section[id] { scroll-margin-top: 72px; }
+  ::selection { background: #1479FF; color: #fff; }
+
+  .eyebrow { letter-spacing: .28em; }
+  .hero-copy h1, .hero-copy p { text-shadow: 0 2px 28px rgba(0,0,0,.75), 0 1px 4px rgba(0,0,0,.5); }
+
+  .slot { position: relative; overflow: hidden; background:
+      repeating-linear-gradient(45deg,#101218,#101218 12px,#0d0f14 12px,#0d0f14 24px);
+      border: 1px solid rgba(255,255,255,.08); }
+  .slot::after { content: attr(data-label); position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; text-align:center;
+      color: #5c6472; font-family: 'Sora',sans-serif; font-weight:700; font-size: .8rem;
+      letter-spacing: .18em; padding: 1rem; pointer-events: none; }
+  .slot img { position: relative; width: 100%; height: 100%; object-fit: cover; display:block; }
+  .slot:has(img)::after { display: none; }
+
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  .navlink.active { color: #fff; }
+  .navlink.active::after { width: 100%; }
+  .navlink { position: relative; }
+  .navlink::after { content:''; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:#1479FF; transition:width .3s ease; }
+
+  @media print { .reveal { opacity:1 !important; transform:none !important; } .no-print{display:none;} }
+</style>
+</head>
+<body class="font-body text-white antialiased">
+
+<!-- NAV -->
+<header class="no-print fixed top-0 inset-x-0 z-50 backdrop-blur-md bg-ink/70 border-b border-white/5">
+  <div class="max-w-6xl mx-auto px-6 h-[72px] flex items-center justify-between">
+    <a href="#hero" class="font-head font-extrabold tracking-tight text-sm">
+      <span class="text-winblue">1win</span> <span class="text-mute font-semibold hidden sm:inline">× Skyhook</span>
+    </a>
+    <nav class="hidden md:flex gap-7 text-sm text-mute font-medium">
+      <a href="#stunt" class="navlink hover:text-white transition">The Stunt</a>
+      <a href="#branding" class="navlink hover:text-white transition">Branding</a>
+      <a href="#deliverables" class="navlink hover:text-white transition">Deliverables</a>
+      <a href="#budget" class="navlink hover:text-white transition">Budget</a>
+    </nav>
+  </div>
+</header>
+
+<!-- 1 · HERO -->
+<section id="hero" class="relative">
+  <img src="photos/hero.jpg" alt="" class="w-full block" onerror="this.style.display='none'">
+  <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/30 to-transparent"></div>
+  <div class="absolute inset-0 flex items-center">
+    <div class="max-w-6xl mx-auto px-6 w-full hero-copy">
+      <p class="eyebrow uppercase text-winblue2 text-xs font-semibold mb-4">A proposal for 1win</p>
+      <h1 class="font-head font-extrabold leading-[0.92] text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight">
+        PULLED FROM<br>A MOVING CAR.<br>BY A PLANE.
+      </h1>
+      <p class="mt-6 text-lg md:text-2xl text-white/85 font-medium max-w-xl">Then I cut away from the rope in mid-air and parachute down.</p>
+    </div>
+  </div>
+  <div class="no-print absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-mute text-xs eyebrow uppercase animate-pulse">Scroll ↓</div>
+</section>
+
+<!-- 2 · THE STUNT -->
+<section id="stunt" class="relative overflow-hidden py-14 md:py-20">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">01 — The Stunt</p>
+    <h2 class="font-head font-extrabold text-4xl md:text-6xl tracking-tight max-w-3xl mt-3 reveal">Skyhook.</h2>
+    <p class="mt-6 text-lg text-mute max-w-3xl reveal">I'm standing up in the back of a moving convertible. A plane comes in low overhead trailing a rope. I catch it, clip it into my harness, and it rips me straight up out of the car — the car keeps driving without me. The plane carries me up to altitude, and then <span class="text-white font-semibold">I cut away from the rope, freefall, and open my parachute.</span></p>
+    <p class="mt-4 text-lg text-mute max-w-3xl reveal">Car to plane to skydive, in one continuous take.</p>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+      <div class="reveal rounded-xl border border-white/10 bg-ink p-5">
+        <div class="text-winblue text-xs eyebrow uppercase">01</div>
+        <div class="font-head font-bold mt-1">The drive</div>
+        <p class="mt-2 text-sm text-mute leading-relaxed">Moving convertible on a closed road, camera car alongside.</p>
+      </div>
+      <div class="reveal rounded-xl border border-white/10 bg-ink p-5">
+        <div class="text-winblue text-xs eyebrow uppercase">02</div>
+        <div class="font-head font-bold mt-1">The hook</div>
+        <p class="mt-2 text-sm text-mute leading-relaxed">The plane passes overhead. I catch the rope and clip in.</p>
+      </div>
+      <div class="reveal rounded-xl border border-winblue/40 bg-winblue/5 p-5">
+        <div class="text-winblue text-xs eyebrow uppercase">03</div>
+        <div class="font-head font-bold mt-1">The extraction</div>
+        <p class="mt-2 text-sm text-mute leading-relaxed">The line goes tight and pulls me out of the car into the sky.</p>
+      </div>
+      <div class="reveal rounded-xl border border-winblue/40 bg-winblue/5 p-5">
+        <div class="text-winblue text-xs eyebrow uppercase">04</div>
+        <div class="font-head font-bold mt-1">The skydive</div>
+        <p class="mt-2 text-sm text-mute leading-relaxed">I cut away at altitude, freefall, and fly my canopy down.</p>
+      </div>
+    </div>
+
+    <div class="mt-12 reveal">
+      <div class="slot aspect-[3/2] rounded-xl" data-label="SKYHOOK"><img src="photos/concept.jpg" alt="" onerror="this.remove()"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 3 · BRANDING -->
+<section id="branding" class="relative overflow-hidden py-14 md:py-20 border-y border-white/5 bg-panel/40">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">02 — Branding</p>
+    <h2 class="font-head font-extrabold text-3xl md:text-5xl tracking-tight max-w-3xl mt-3 reveal">1win is on me, in every single frame.</h2>
+    <div class="mt-12 max-w-2xl reveal">
+      <div class="border-b border-white/10 pb-4">
+        <h3 class="font-head font-extrabold text-2xl">The athlete</h3>
+      </div>
+      <ul class="mt-5 space-y-1.5 text-sm text-mute list-disc pl-5 marker:text-winblue">
+        <li>1win shirt</li>
+        <li>1win cuffs</li>
+        <li>1win sticker on the helmet</li>
+        <li>Worn for the whole film, road to landing</li>
+      </ul>
+    </div>
+
+    <div class="mt-12 reveal">
+      <div class="slot aspect-[3/2] rounded-xl" data-label="BRANDING REFERENCE"><img src="photos/hero.jpg" alt="" onerror="this.remove()"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · DELIVERABLES -->
+<section id="deliverables" class="relative overflow-hidden py-14 md:py-20">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">03 — Deliverables</p>
+
+    <h2 class="font-head font-extrabold text-3xl md:text-5xl tracking-tight max-w-3xl mt-3 reveal">Six reels from one build day.</h2>
+    <p class="mt-6 text-lg text-mute max-w-2xl reveal">The stunt is filmed from four angles at once, and those angles are cut into six finished reels. Every one stands on its own as a post, not six edits of the same clip. I shoot and edit all of them.</p>
+
+    <div class="grid md:grid-cols-3 gap-6 mt-14">
+      <div class="reveal rounded-2xl border border-white/10 bg-ink p-7 flex flex-col">
+        <div class="slot aspect-[3/4] rounded-lg mb-6"><img src="photos/deliv-pov.jpg" alt="" onerror="this.remove()"></div>
+        <div class="text-winblue text-xs eyebrow uppercase">Reel 01</div>
+        <div class="font-head font-bold text-xl mt-1">POV</div>
+      </div>
+      <div class="reveal rounded-2xl border border-white/10 bg-ink p-7 flex flex-col">
+        <div class="slot aspect-[3/4] rounded-lg mb-6"><img src="photos/concept.jpg" alt="" onerror="this.remove()"></div>
+        <div class="text-winblue text-xs eyebrow uppercase">Reel 02</div>
+        <div class="font-head font-bold text-xl mt-1">Drone</div>
+      </div>
+      <div class="reveal rounded-2xl border border-white/10 bg-ink p-7 flex flex-col">
+        <div class="slot aspect-[3/4] rounded-lg mb-6"><img src="photos/deliv-incar.jpg" alt="" onerror="this.remove()"></div>
+        <div class="text-winblue text-xs eyebrow uppercase">Reel 03</div>
+        <div class="font-head font-bold text-xl mt-1">In-car / iPhone</div>
+      </div>
+    </div>
+
+    <div class="mt-6 reveal rounded-2xl border border-winblue/40 bg-winblue/5 p-8">
+      <div class="text-winblue text-xs eyebrow uppercase">Reel 04</div>
+      <div class="font-head font-bold text-2xl mt-1">The master cut</div>
+      <p class="mt-4 text-white/85 leading-relaxed max-w-3xl">All four angles cut together into the hero piece.</p>
+    </div>
+
+    <div class="mt-6 reveal rounded-2xl border border-white/10 bg-ink p-8">
+      <div class="text-winblue text-xs eyebrow uppercase">How they get published</div>
+      <div class="font-head font-bold text-2xl mt-1">Six reels, tested before anything lands.</div>
+      <div class="grid sm:grid-cols-2 gap-6 mt-6">
+        <div>
+          <div class="text-white font-semibold text-sm">6&times; reels run as trials</div>
+          <p class="mt-2 text-sm text-mute leading-relaxed">Every cut goes out as an Instagram trial first, tested against non-followers before it touches my feed. Six shots at finding the one that breaks out.</p>
+        </div>
+        <div>
+          <div class="text-white font-semibold text-sm">Top 2 posted to my main feed</div>
+          <p class="mt-2 text-sm text-mute leading-relaxed">The two highest performing trials get posted to my main feed as collabs with 1win — so what my audience sees is the version the algorithm already picked.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 rounded-2xl border border-winblue/40 bg-winblue/5 p-6 reveal">
+      <div class="flex gap-3 items-start">
+        <span class="text-winblue font-bold text-lg leading-none mt-0.5">→</span>
+        <p class="text-white/90"><span class="font-semibold">Included:</span> 1win gets full access to <span class="text-white font-semibold">all footage from the project</span> — edit it, repurpose it, and post it on your own channels. Want to cut your own reels internally? It's all yours.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · BUDGET -->
+<section id="budget" class="relative overflow-hidden py-14 md:py-20 border-y border-white/5 bg-panel/40">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none">
+    <span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span>
+  </div>
+  <div class="relative max-w-6xl mx-auto px-6">
+    <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">04 — Budget</p>
+
+    <div class="mt-14 max-w-2xl mx-auto">
+      <div class="reveal rounded-2xl border border-winblue/40 bg-winblue/5 p-12 text-center">
+        <div class="font-head font-bold text-lg">Skyhook</div>
+        <div class="font-head font-extrabold text-6xl md:text-7xl text-winblue mt-4">$17,500</div>
+        <p class="mt-6 text-mute leading-relaxed">Aircraft and pilot, stunt coordinator, safety and jump crew, drone and camera team, vehicles, permits, insurance — through to four finished reels.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 6 · THE CREATOR -->
+<section id="creators" class="relative overflow-hidden py-14 md:py-20">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none"><span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.10]" style="font-size:9vw">1win</span></div>
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <p class="eyebrow uppercase text-winblue text-sm font-bold reveal">05 — The Creator</p>
+
+    <div class="grid md:grid-cols-[280px_1fr] gap-10 items-center mt-12 max-w-4xl">
+      <div class="reveal">
+        <div class="slot aspect-[3/4] rounded-xl" data-label="KYLE"><img src="photos/kyle.jpg" alt="" onerror="this.remove()"></div>
+      </div>
+      <div class="reveal">
+        <div class="font-head font-extrabold text-3xl md:text-4xl tracking-tight">Kyle Zellner</div>
+        <div class="mt-4 flex flex-wrap gap-3">
+          <a href="https://www.instagram.com/kyle.zellner/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-winblue/60 hover:text-white transition px-4 py-2 text-sm text-mute">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" class="h-4 w-4"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17.2" cy="6.8" r="1" fill="currentColor" stroke="none"/></svg>
+            @kyle.zellner
+          </a>
+          <a href="https://www.facebook.com/people/Kylezellner/61590668937779/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 rounded-full border border-white/15 hover:border-winblue/60 hover:text-white transition px-4 py-2 text-sm text-mute">
+            <svg viewBox="0 0 24 24" fill="currentColor" class="h-4 w-4"><path d="M14 9h2.5V6H14c-2.2 0-3.5 1.4-3.5 3.6V11H8.5v3h2V22h3v-8h2.3l.7-3h-3V9.8c0-.6.2-.8.5-.8z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer class="relative overflow-hidden py-14 md:py-20 border-t border-white/5 bg-panel/40 text-center">
+  <div aria-hidden="true" class="pointer-events-none absolute top-10 right-6 select-none">
+    <span class="font-head font-extrabold leading-none tracking-tighter text-white/[0.04]" style="font-size:26vw">1win</span>
+  </div>
+  <div class="relative max-w-3xl mx-auto px-6">
+    <p class="font-head font-extrabold text-2xl md:text-3xl tracking-tight reveal">Kyle Zellner</p>
+    <p class="text-mute mt-3 reveal"><a href="mailto:kylezellner2@gmail.com" class="text-winblue hover:underline">kylezellner2@gmail.com</a></p>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  const revealAll = () => document.querySelectorAll('.reveal').forEach(el => {
+    const r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('in'); else io.observe(el);
+  });
+  revealAll();
+  window.addEventListener('load', revealAll);
+
+  // Count-up
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target, to = +el.dataset.to; let start = null;
+      const dec = to % 1 !== 0;
+      const dur = 1400;
+      const step = (t) => {
+        if (!start) start = t;
+        const p = Math.min((t - start) / dur, 1);
+        el.textContent = dec ? (p * to).toFixed(1) : Math.floor(p * to).toString();
+        if (p < 1) requestAnimationFrame(step); else el.textContent = dec ? to.toFixed(1) : to;
+      };
+      requestAnimationFrame(step);
+      countIO.unobserve(el);
+    });
+  }, { threshold: 0.6 });
+  document.querySelectorAll('.count').forEach(el => countIO.observe(el));
+
+  // Active nav highlight — pick the last section whose top has passed just under the header
+  const links = [...document.querySelectorAll('.navlink')];
+  const map = links.map(l => ({ l, sec: document.querySelector(l.getAttribute('href')) })).filter(x => x.sec);
+  function updateActiveNav() {
+    const line = 90;
+    let current = null;
+    for (const m of map) {
+      if (m.sec.getBoundingClientRect().top <= line) current = m;
+    }
+    links.forEach(l => l.classList.remove('active'));
+    if (current) current.l.classList.add('active');
+  }
+  updateActiveNav();
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  window.addEventListener('resize', updateActiveNav);
+</script>
+</body>
+</html>

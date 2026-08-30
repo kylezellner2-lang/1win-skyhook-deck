@@ -58,6 +58,31 @@ tailwind.config = {
   .navlink { position: relative; }
   .navlink::after { content:''; position:absolute; left:0; bottom:-4px; height:1px; width:0; background:#1479FF; transition:width .3s ease; }
 
+  /* ---- MOBILE ---- */
+  @media (max-width: 767px) {
+    /* Hero photo is 3:2, so at phone width it is far shorter than the copy that sits
+       on top of it — the headline was being clipped. Make it a full-bleed cover hero. */
+    #hero { min-height: 78vh; min-height: 78svh; }
+    #hero > img { position: absolute; inset: 0; width: 100%; height: 100%;
+                  object-fit: cover; object-position: 58% 50%; }
+    #hero .hero-grad {
+      background: linear-gradient(180deg, rgba(10,11,14,.60) 0%, rgba(10,11,14,.15) 34%,
+                                          rgba(10,11,14,.80) 78%, rgba(10,11,14,.95) 100%);
+    }
+    #hero .hero-inner { align-items: flex-end; padding-top: 72px; padding-bottom: 3rem; }
+    #hero .scroll-cue { display: none; }
+
+    /* centred multi-line body copy is hard to read on a phone */
+    .budget-note { text-align: left; }
+
+    /* stop the portrait eating a whole screen */
+    #creators .slot { max-width: 240px; margin-left: auto; margin-right: auto; }
+
+    /* tighten vertical rhythm so the deck is less of a scroll on a phone */
+    section { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+    #hero { padding: 0 !important; }
+  }
+
   @media print { .reveal { opacity:1 !important; transform:none !important; } .no-print{display:none;} }
 </style>
 </head>
@@ -81,8 +106,8 @@ tailwind.config = {
 <!-- 1 · HERO -->
 <section id="hero" class="relative">
   <img src="photos/hero.jpg" alt="" class="w-full block" onerror="this.style.display='none'">
-  <div class="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/30 to-transparent"></div>
-  <div class="absolute inset-0 flex items-center">
+  <div class="hero-grad absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/30 to-transparent"></div>
+  <div class="hero-inner absolute inset-0 flex items-center">
     <div class="max-w-6xl mx-auto px-6 w-full hero-copy">
       <p class="eyebrow uppercase text-winblue2 text-xs font-semibold mb-4">A proposal for 1win</p>
       <h1 class="font-head font-extrabold leading-[0.92] text-3xl sm:text-5xl md:text-6xl lg:text-7xl tracking-tight">
@@ -91,7 +116,7 @@ tailwind.config = {
       <p class="mt-6 text-lg md:text-2xl text-white/85 font-medium max-w-xl">Then I cut away from the rope in mid-air and parachute down.</p>
     </div>
   </div>
-  <div class="no-print absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-mute text-xs eyebrow uppercase animate-pulse">Scroll ↓</div>
+  <div class="scroll-cue no-print absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-mute text-xs eyebrow uppercase animate-pulse">Scroll ↓</div>
 </section>
 
 <!-- 2 · THE STUNT -->
@@ -246,7 +271,7 @@ tailwind.config = {
           <li>Every frame of raw footage handed to 1win</li>
         </ul>
 
-        <p class="mt-10 pt-8 border-t border-white/10 text-sm text-mute leading-relaxed max-w-xl mx-auto">The original $22,500 covered the extraction on its own. The difference is the production around it &mdash; the crew, the training days, the vehicles and the branding that turn a stunt into a film.</p>
+        <p class="budget-note mt-10 pt-8 border-t border-white/10 text-sm text-mute leading-relaxed max-w-xl mx-auto">The original $22,500 covered the extraction on its own. The difference is the production around it &mdash; the crew, the training days, the vehicles and the branding that turn a stunt into a film.</p>
       </div>
     </div>
 
